@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 const Menubar = ({ children }) => {
   const menu = (
@@ -10,26 +11,21 @@ const Menubar = ({ children }) => {
         </Link>
       </li>
       <li>
-        <Link className="rounded-lg text-base" to="/">
+        <Link className="rounded-lg text-base" to="/show-books">
           Show-Books
         </Link>
       </li>
       <li>
-        <Link className="rounded-lg text-base" to="/">
+        <Link className="rounded-lg text-base" to="/add-book">
           Add-Books
         </Link>
       </li>
     </>
   );
   return (
-    <div
-      class="drawer drawer-end"
-      style={{
-        background: "#120E43",
-      }}
-    >
+    <div class="drawer drawer-end ">
       <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content flex flex-col">
+      <div class="drawer-content flex flex-col ">
         <div
           class="w-full navbar bg-base-300"
           style={{
@@ -61,7 +57,17 @@ const Menubar = ({ children }) => {
             <ul class="menu menu-horizontal">{menu}</ul>
           </div>
         </div>
-        <div className="w-[90%] mx-auto text-white">{children}</div>
+        <div>
+          <div
+            style={{
+              background: "#120E43",
+            }}
+            className="w-[90%] mx-auto text-white mt-5 p-6"
+          >
+            {children}
+          </div>
+          <Footer></Footer>
+        </div>
       </div>
       <div class="drawer-side">
         <label for="my-drawer-3" class="drawer-overlay"></label>
