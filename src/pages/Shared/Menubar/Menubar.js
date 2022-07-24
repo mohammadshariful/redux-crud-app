@@ -62,7 +62,7 @@ const Menubar = ({ children }) => {
             style={{
               background: "#120E43",
             }}
-            className="w-[90%] mx-auto text-white mt-5 p-6"
+            className="w-[90%] mx-auto text-white mt-5 "
           >
             {children}
           </div>
