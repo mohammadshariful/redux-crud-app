@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { deleteBook } from "./BookSlice";
 
 const SingleBooks = () => {
@@ -13,9 +14,11 @@ const SingleBooks = () => {
             <td>{title}</td>
             <td>{author}</td>
             <td>
-              <button className="btn btn-sm mr-2 btn-success text-white">
-                Edit
-              </button>
+              <Link to="/edit-book" state={{ id, author, title }}>
+                <button className="btn btn-sm mr-2 btn-success text-white">
+                  Edit
+                </button>
+              </Link>
               <button
                 onClick={() => dispatch(deleteBook(id))}
                 className="btn btn-sm btn-error text-white"
